@@ -8,12 +8,15 @@ import StudentList from './StudentList';
 import SubmitButton from './SubmitButton';
 import AttendanceRecord from './AttendanceRecord';
 import moment from 'moment';
+import { useTheme } from '@react-navigation/native'; // Import useTheme hook
 
 const HomeScreen = () => {
   const [students, setStudents] = useState([]);
   const [attendance, setAttendance] = useState({});
   const [selectedDate, setSelectedDate] = useState(moment().format('YYYY-MM-DD'));
   const [currentAttendance, setCurrentAttendance] = useState({});
+
+  const { colors } = useTheme(); // Access theme colors
 
   useEffect(() => {
     loadData();
@@ -48,20 +51,19 @@ const HomeScreen = () => {
     setAttendance(updatedAttendance);
     await saveData('attendance', updatedAttendance);
     setCurrentAttendance({});
-    setSelectedDate(moment(selectedDate).add(1, 'day').format('YYYY-MM-DD')); // Automatically move to the next day
+    setSelectedDate(moment(selectedDate).add(1, 'day').format('YYYY-MM-DD'));
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      contentContainerStyle={styles.container} // Apply dynamic background
+      style={{ backgroundColor: colors.background }} // Ensure full-screen background
+    >
       <AddStudentForm onAddStudent={addStudent} />
       <CalendarView selectedDate={selectedDate} onSelectDate={setSelectedDate} />
       <StudentList students={students} onMarkAttendance={markAttendance} />
       <SubmitButton onSubmit={submitAttendance} />
-      <AttendanceRecord
-        attendance={attendance[selectedDate]}
-        students={students}
-        selectedDate={selectedDate} // Pass the selected date to the AttendanceRecord component
-      />
+      <AttendanceRecord attendance={attendance[selectedDate]} students={students} selectedDate={selectedDate} />
     </ScrollView>
   );
 };
@@ -70,7 +72,6 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     padding: 20,
-    backgroundColor: '#f5f5f5',
   },
 });
 
