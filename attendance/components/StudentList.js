@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import AttendanceButtons from './AttendanceButtons';
 
 const StudentList = ({ students, onMarkAttendance }) => {
@@ -17,7 +17,6 @@ const StudentList = ({ students, onMarkAttendance }) => {
       // Single press detected
       setIsListVisible((prev) => !prev); // Toggle visibility
     }
-
     lastPressTime.current = currentTime; // Update the last press time
   };
 
@@ -57,6 +56,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    backgroundColor: 'transparent', // Set the background to transparent
   },
   toggleButton: {
     backgroundColor: '#007BFF',
@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     padding: 10,
+    backgroundColor: 'transparent', // Set the background to transparent
   },
   studentItem: {
     flexDirection: 'row',
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(255, 255, 255, 0.2)',
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    backgroundColor: 'rgba(255, 255, 255, 0.3)', // Semi-transparent background
     borderRadius: 8,
     marginBottom: 10,
     shadowColor: '#000',
