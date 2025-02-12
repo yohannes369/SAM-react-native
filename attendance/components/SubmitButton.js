@@ -13,15 +13,23 @@ const SubmitButton = ({ onSubmit }) => {
 const styles = StyleSheet.create({
   submitButton: {
     backgroundColor: 'yellowgreen',
-    padding: 15,
-    borderRadius: 5,
+    borderRadius: 30,
     alignItems: 'center',
     marginTop: 20,
-    
-  },
+    fontSize: 10,
+    marginLeft: 90,
+    // paddingVertical: 5,  // Adjust the vertical padding
+    // paddingHorizontal: 10, // Adjust the horizontal padding
+    width: 150, // Set a specific width
+    height: 40, // Set a specific height
+},
+
+
   submitButtonText: {
     color: '#fff',
     fontSize: 16,
+    padding: 5,
+   
   },
 });
 
