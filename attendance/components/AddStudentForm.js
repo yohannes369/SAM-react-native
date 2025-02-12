@@ -43,10 +43,14 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 70,
     alignItems: 'center',
+    width: 150, // Set a specific width
+    height: 40,
+    marginLeft: 100,
   },
   addButtonText: {
     color: 'yellowgreen',
     fontSize: 16,
+    backgroundColor: 'transparent',
   },
 });
 
