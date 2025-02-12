@@ -32,12 +32,14 @@ const AddStudentForm = ({ onAddStudent }) => {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 20,
+    
   },
   input: {
     borderWidth: 1,
     padding: 10,
     marginBottom: 10,
     borderRadius: 5,
+
   },
   addButton: {
     padding: 10,

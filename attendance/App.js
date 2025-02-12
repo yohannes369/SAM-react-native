@@ -115,18 +115,20 @@ const App = () => {
   const theme = isDarkMode ? DarkTheme : DefaultTheme;
 
   return (
+    
     <NavigationContainer theme={theme}>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
           component={HomeScreen}
           options={{
-            title: 'Attendance App',
+            title: 'Attendance App for bonga university',
             headerRight: () => (
               <ToggleButton
                 isDarkMode={isDarkMode}
                 onToggle={() => setIsDarkMode(!isDarkMode)}
               />
+
             ),
           }}
         />
@@ -150,7 +152,12 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     padding: 20,
     backgroundColor: 'transparent',
+ 
   },
-});
+  
+}
+
+
+);
 
 export default App;
