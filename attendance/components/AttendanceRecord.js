@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     borderColor: '#ccc',
+    backgroundColor: 'transparent',
   },
   tableHeader: {
     flexDirection: 'row',
