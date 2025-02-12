@@ -12,11 +12,12 @@ const SubmitButton = ({ onSubmit }) => {
 
 const styles = StyleSheet.create({
   submitButton: {
-    backgroundColor: '#6200ee',
+    backgroundColor: 'yellowgreen',
     padding: 15,
     borderRadius: 5,
     alignItems: 'center',
     marginTop: 20,
+    
   },
   submitButtonText: {
     color: '#fff',

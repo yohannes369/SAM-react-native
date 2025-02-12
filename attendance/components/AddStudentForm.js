@@ -41,11 +41,11 @@ const styles = StyleSheet.create({
   },
   addButton: {
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 70,
     alignItems: 'center',
   },
   addButtonText: {
-    color: '#fff',
+    color: 'yellowgreen',
     fontSize: 16,
   },
 });
